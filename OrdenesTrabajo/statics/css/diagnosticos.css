@@ -1,0 +1,52 @@
+/*------------------------Seccion de Diagnostico----------------------*/
+.row-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.btn-view {
+  background-image: url(../img/view.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  
+  cursor: pointer;
+}
+.btn-edit {
+  background-image: url(../img/pencil.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-delete {
+  background-image: url(../img/delete.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-diagnostico {
+  display: flex;
+  background-color: #16c7ff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 7px;
+}
+.btn-diagnostico__text {
+  color: #000000;
+}
+.td-text {
+  text-align: center;
+}

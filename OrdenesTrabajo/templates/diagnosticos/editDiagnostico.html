@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block main-container %}
+
+<div class="container container shadow p-3 mb-5 bg-body rounded" name="contenedor-principal" id="contenedorContactos">
+    <h2>Edici&oacute;n de diagnostico</h2>
+    <hr>
+    <div class="row">
+      <div class="form-group col-md-12">
+        <form method="POST" class="row g-3" action="{% url 'edit-diagnostico' %}">
+          {% csrf_token %}
+          
+          <div class="col-md-6">
+            <input value="{{ diagnostico.IdDiagnostico }}" id="IdDiagnostico" name="IdDiagnostico" type="text" hidden>
+            <label for="placa" class="form-label">Placa</label>
+            <input type="text" name="placa" class="form-control" id="placa" value="{{ diagnostico.Placa }}">
+          </div>
+          <div class="col-md-6">
+            <label for="cliente" class="form-label">Cliente</label>
+            <input type="text" name="cliente" class="form-control" id="cliente" value="{{ diagnostico.Cliente }}">
+          </div>
+          <div class="col-md-6">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="text" name="fecha" class="form-control" id="fecha" value="{{ diagnostico.Fecha }}">
+          </div>
+          <div class="col-md-6">
+            <label for="tipo" class="form-label">Tipo</label>
+            <input type="text" name="tipo" class="form-control" id="tipo" value="{{ diagnostico.Tipo }}">
+          </div>
+          <div class="col-md-6">
+            <label for="estado" class="form-label">Estado</label>
+            <input type="text" name="estado" class="form-control" id="estado" value="{{ diagnostico.Estado }}">
+          </div>
+          <div class="col-12 text-center">
+            <a onclick="mensaje('modificar');">
+              <button type="submit" class="btn btn-outline-primary" id="guardarGrupoGasto">Guardar</button>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+{% endblock %}

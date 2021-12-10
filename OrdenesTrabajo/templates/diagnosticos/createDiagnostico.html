@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block main-container %}
+<div class="container container shadow p-3 mb-5 bg-body rounded" name="contenedor-principal" id="contenedorDiagnosticos">
+    <h2>Diagn&oacute;sticos</h2>
+
+    <div class="row">
+      <div class="form-group col-md-12">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <th class="td-text">Acciones</th>
+            <th class="td-text">No. de Orden</th>
+            <th class="td-text">Placa Vehiculo</th>
+            <th class="td-text">Cliente</th>
+            <th class="td-text">Fecha de Solicitud</th>
+            <th class="td-text">Tipo de Solicitud</th>
+            <th class="td-text">Estado</th>
+          </thead>
+          <tbody id="tbl_ordenes">
+            {% for c in diagnosticos %}
+            <tr>
+              <td class="row-data">
+                <a class="btn-link" href="">
+                  <span class="btn-view"></span>
+                </a>
+                <a class="btn-link" href="editDiagnostico/{{c.IdDiagnostico}}">
+                  <span class="btn-edit"></span>
+                </a>
+                <a onclick="mensaje('eliminar');" class="btn-link" href="eliminarDiagnostico/{{c.IdDiagnostico}}">
+                  <span class="btn-delete"></span>
+                </a>
+                <a href="iniciarDiagnostico/{{c.IdDiagnostico}}" class="btn-diagnostico">
+                  <span class="btn-diagnostico__text">Iniciar Diagnostico</span>
+                </a>
+              </td>
+              <td class="td-text">{{c.IdDiagnostico}}</td>
+              <td class="td-text">{{c.Placa}}</td>
+              <td class="td-text">{{c.Cliente}}</td>
+              <td class="td-text">{{c.Fecha}}</td>
+              <td class="td-text">{{c.Tipo}}</td>
+              <td class="td-text">{{c.Estado}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
